@@ -1,5 +1,7 @@
 # FlatOut 2 split-screen for Nucleus Co-op
 
+!!! I'm still ironing out kinks so take this guide with a grain of salt until end of October!!!
+
 Play FlatOut 2 with up to 4 players on one PC and one screen: [Nucleus Co-op](https://github.com/SplitScreen-Me/splitscreenme-nucleus) runs one game window per player, and the windows race each other over the game's own LAN mode.
 
 What this handler adds on top of plain Nucleus:
@@ -63,7 +65,7 @@ See [`handlers/FlatOut 2/README.txt`](handlers/FlatOut%202/README.txt) for detai
 
 ## How this was made
 
-This project was written with AI assistance. The handler, the fo2pad DLL, the reverse engineering of the game (keyboard hook, controller files, network behaviour) and the test tools were written by Claude, Anthropic's AI model, in a Claude Code session. The repository owner set the goals, made the design decisions and tested everything on real hardware with real controllers.
+This project was written with AI assistance. The handler, the fo2pad DLL, the reverse engineering of the game (keyboard hook, controller files, network behaviour) and the test tools were written by Claude, Anthropic's AI model, in a Claude Code session.
 
 ## Credits
 
