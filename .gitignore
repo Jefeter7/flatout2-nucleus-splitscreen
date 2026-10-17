@@ -1,0 +1,5 @@
+*.log
+*.def
+fo2pad_remote.txt
+*.nc
+__pycache__/
