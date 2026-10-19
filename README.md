@@ -1,6 +1,7 @@
 # FlatOut 2 split-screen for Nucleus Co-op
 
-!!! I'm still ironing out kinks so take this guide with a grain of salt until end of October!!!
+> [!WARNING]
+> Still being tested on more PCs. Expect rough edges until the end of October 2026.
 
 Play FlatOut 2 with up to 4 players on one PC and one screen: [Nucleus Co-op](https://github.com/SplitScreen-Me/splitscreenme-nucleus) runs one game window per player, and the windows race each other over the game's own LAN mode.
 
@@ -17,6 +18,15 @@ What this handler adds on top of plain Nucleus:
 - [Nucleus Co-op](https://github.com/SplitScreen-Me/splitscreenme-nucleus/releases) 2.4.1 or newer.
 - One Xbox (XInput) controller per window. The keyboard can be used for one window.
 - Start FlatOut 2 normally once before using the handler, so it creates its settings with a resolution your screen supports.
+
+Tested so far on two Windows 11 PCs with Xbox Wireless controllers over Bluetooth.
+
+### Windows security
+
+The handler's `dinput8.dll` is open source but not code-signed, so Windows may not trust it:
+
+- **Smart App Control** (Windows 11) blocks it, the game closes immediately, and Nucleus reports *"Process with an Id of … is not running"*. Smart App Control has to be off: Windows Security → App & browser control → Smart App Control. On many Windows versions it can't be switched back on without resetting Windows, and it also blocks many other mods and Nucleus Co-op's own helper files.
+- **Microsoft Defender** might quarantine it. If it shows up in Windows Security → Protection history, restore it there, or add the Nucleus Co-op folder as an exclusion.
 
 ## Install
 
@@ -60,7 +70,7 @@ See [`handlers/FlatOut 2/README.txt`](handlers/FlatOut%202/README.txt) for detai
 
 ## Building
 
-- The DLL: [Tiny C Compiler](https://download.savannah.gnu.org/releases/tinycc/) 0.9.27 (32-bit), then `python "handlers/FlatOut 2/src/build.py" path\to\tcc.exe`.
+- The DLL: a 32-bit MinGW GCC, e.g. [w64devkit](https://github.com/skeeto/w64devkit/releases) x86 (releases are built with v2.10.0, GCC 16.2), with its `bin` folder on `PATH`, then `python "handlers/FlatOut 2/src/build.py" path\to\gcc.exe`. [Tiny C Compiler](https://download.savannah.gnu.org/releases/tinycc/) 0.9.27 works too. The build is reproducible: w64devkit 2.10.0 turns the source into a `dinput8.dll` with SHA-256 `c44b586219277253bf48824ed9c4a887d71e3c5545e42adecaf463a3fe29d61f`, identical to the released one.
 - The `.nc` package: `python tools/make_nc.py`.
 
 ## How this was made

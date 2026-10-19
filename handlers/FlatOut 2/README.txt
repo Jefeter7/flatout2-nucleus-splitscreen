@@ -6,6 +6,8 @@ Requirements
 - Start the game normally once before using Nucleus, so it creates Savegame\options.cfg and device.cfg
   with a resolution your screen supports.
 - One Xbox / XInput controller per screen (the keyboard can be used for one screen).
+- Windows 11 Smart App Control must be off: dinput8.dll is not code-signed, Smart App Control blocks it and
+  the game closes right away (Nucleus: "Process with an Id of ... is not running").
 
 What is in this folder
 - dinput8.dll   "fo2pad", copied by the handler into every Nucleus instance folder (never into the real
@@ -32,10 +34,11 @@ Settings (fo2pad.ini, written by the handler into each instance folder)
   fo2pad_remote.txt, e.g. "DOWN DOWN ENTER").
 
 Building
-  Tiny C Compiler 0.9.27 (32-bit, https://download.savannah.gnu.org/releases/tinycc/):
-    python src\build.py <path to tcc.exe>
-  tcc decorates the stdcall export name; build.py renames it to DirectInput8Create and writes
-  ..\dinput8.dll.
+  A 32-bit MinGW GCC, e.g. w64devkit x86 (https://github.com/skeeto/w64devkit/releases; releases are
+  built with v2.10.0, GCC 16.2), with its bin folder on PATH:
+    python src\build.py <path to gcc.exe>
+  Tiny C Compiler 0.9.27 also works (python src\build.py <path to tcc.exe>); build.py then renames the
+  decorated export to DirectInput8Create. Output: ..\dinput8.dll.
 
 Credits
   The LAN fixes (virtual addresses, per-instance MAC) follow what MorMund's FO2-Splitscreen mod found:

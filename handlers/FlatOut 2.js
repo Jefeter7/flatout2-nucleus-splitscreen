@@ -27,6 +27,7 @@ Game.PauseBetweenStarts = 5;
 Game.Description =
   "*<Made for the GOG version (original 2006 game v1.2). The current Steam version is not supported.|255,200,0>* " +
   "Start FlatOut 2 normally once first, so it creates its settings. " +
+  "Windows 11 Smart App Control must be off: it blocks the handler's unsigned dinput8.dll and the game closes right away. " +
   "One Xbox (XInput) controller per screen; the keyboard can be used for one screen too. " +
   "Menus: D-pad or left stick to move, A to select, B or Start to go back. " +
   "To race together: player 1 creates a game under Multiplayer > LAN, the others join it there. " +

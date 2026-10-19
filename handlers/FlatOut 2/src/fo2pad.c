@@ -21,8 +21,7 @@
  *    (D-pad = arrows, Start = Escape; A = Enter, B = Escape and left stick = arrows only while no
  *    trigger was pressed recently, i.e. not while racing), so every window works without focus.
  *
- * Build (32-bit, Tiny C Compiler 0.9.27):  python build.py <tcc.exe>
- * (tcc decorates the stdcall export, build.py renames it to "DirectInput8Create").
+ * Build (32-bit MinGW GCC, e.g. w64devkit x86, or Tiny C Compiler 0.9.27):  python build.py <gcc.exe|tcc.exe>
  */
 #include <windows.h>
 
