@@ -1,8 +1,5 @@
 # FlatOut 2 split-screen for Nucleus Co-op
 
-> [!WARNING]
-> Still being tested on more PCs. Expect rough edges until the end of October 2026.
-
 Play FlatOut 2 with up to 4 players on one PC and one screen: [Nucleus Co-op](https://github.com/SplitScreen-Me/splitscreenme-nucleus) runs one game window per player, and the windows race each other over the game's own LAN mode.
 
 What this handler adds on top of plain Nucleus:
